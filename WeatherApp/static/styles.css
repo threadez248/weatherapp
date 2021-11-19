@@ -1,0 +1,71 @@
+body {
+    min-height: 100%;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-image: url("/static/images/blank.jpg");
+    background-color: rgba(0, 0, 0, 0.7);
+    background-position-x: center;
+    background-position-y: center;
+
+    -webkit-transition: background 1.5s linear;
+    -moz-transition: background 1.5s linear;
+    -o-transition: background 1.5s linear;
+    -ms-transition: background 1.5s linear;
+    transition: background 1.5s linear;
+}
+
+.wi {
+    font-size: xxx-large;
+    line-height: 2;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: .2rem;
+}
+
+.card-text {
+    font-size: x-large;
+}
+
+.time {
+    font-size: large;
+}
+
+.no-border {
+    border: 0px solid rgba(0, 0, 0, .125) !important;
+    border-radius: .25rem;
+}
+
+.no-border:hover {
+    background: transparent !important;
+}
+
+.card {
+    color: white;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .125);
+
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, .125);
+}
+
+.wind {
+    font-size: x-large;
+}
+
+#data {
+    display: none;
+}
+
+@media only screen and (max-width: 576px) {
+    .second-dropdown{
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#aaa">
+    <link rel="icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+
+    <title>ITmunk WeatherApp</title>
+
+    <meta name="description" content="A flask based weather web app">
+    <meta name="keywords" content="HTML, CSS, JavaScript, jQuery, Flask, Python">
+    <meta name="author" content="Harsh Balot">
+
+    <!-- StyleSheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather-icons-wind.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='weather-icons.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid p-1 bg-dark text-white">
+            <div class="d-flex flex-wrap align-items-center justify-content-center">
+                <img class="mt-2" src="/static/images/logo_white.png" width="50" height="30" alt="">
+                <span class="ms-2 mt-2 navbar-brand">ITmunk Weather App</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section id="selection ">
+
+                <div class="row mt-5">
+                    <div class="col-sm-6 col-12">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="countryInput" placeholder="Select Country"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-12 second-dropdown">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="cityInput" placeholder="Select City"
+                                autocomplete="off">
+                        </div>
+                    </div>
+                    <!-- <div class="col-1">
+                        <div class="input-group mb-3">
+                            <button class="btn btn-outline-secondary" type="button">Go</button>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <section id="data">
+                <div class="row mt-3">
+                    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12">
+                        <div class="card no-border">
+                            <i class="wi wi-owm-711 text-center" id="currentIcon"></i>
+                            <div class="card-body text-center pt-0">
+                                <h1 id="currentTemp">X &#8451;</h1>
+                                <p class="card-text weatherMain" id="weatherMain">X</p>
+                                <p class="card-text time" id="time">X</p>
+                                <div class="currentInfo row mt-2">
+                                    <div class="col-4">
+                                        <p>Feels like:</p>
+                                        <p id="feelsLike">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Humidity:</p>
+                                        <p id="humidity">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Pressure:</p>
+                                        <p id="pressure">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Wind Speed:</p>
+                                        <p id="wind">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Wind Direction:</p>
+                                        <i id="windDirection" class="wi wi-wind towards-23-deg lh-1 wind"></i>
+                                        <span id="windDirectionText">X</span>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Visibility:</p>
+                                        <p id="visibility">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Dew Point:</p>
+                                        <p id="dewPoint">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Sunrise:</p>
+                                        <p id="sunrise">X</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p>Sunset:</p>
+                                        <p id="sunset">X</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row mt-5 mb-5 text-white">
+                    <div class="col-3">
+                        <h2>Daily Forecast</h2>
+                    </div>
+
+                    <div class="row" id="daily">
+                        
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer mt-auto bg-dark text-white fixed-bottom">
+        <div class="container text-center">
+            <span class="text-muted">&copy; Harsh Balot</span>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+
+</html>
